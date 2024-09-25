@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormControl, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,
+  ]);
+
+  passwordFormControl = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+  ]);
 
 }

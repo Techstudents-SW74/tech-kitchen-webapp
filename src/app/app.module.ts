@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MaterialModule } from './shared/material.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { HeaderComponent } from './components/home/header/header.component';
 import { FooterComponent } from './components/home/footer/footer.component';
 import { AboutComponent } from './components/home/about/about.component';
 import { HeaderApplicationComponent } from './components/application/header-application/header-application.component';
+import { SignupComponent } from './views/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { HeaderApplicationComponent } from './components/application/header-appl
     HeaderComponent,
     FooterComponent,
     AboutComponent,
-    HeaderApplicationComponent
+    HeaderApplicationComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,55 @@
-<p>login works!</p>
+<body>
+    <div class="center-container">
+        <mat-card class="custom-card" appearance="outlined">
+            <mat-card-header class="mat-card-header">
+                <mat-card-title style="font-size: 30px;">Sign In</mat-card-title>
+                <mat-card-subtitle >Inicia sesión a Kitchentech</mat-card-subtitle>
+            </mat-card-header>
+    
+        <!-- Formulario para el email -->
+        <form class="example-form">
+            <!-- Input para el email -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label style="font-size: 14px; color: #F6F5FA;" >Email</mat-label>
+                <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. fcastro@gmail.com">
+                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        
+            <!-- Input para la contraseña -->
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label style="font-size: 14px; color: #F6F5FA;">Password</mat-label>
+                <input type="password" matInput [formControl]="passwordFormControl" placeholder="Enter your password">
+                <mat-error *ngIf="passwordFormControl.hasError('required')">
+                    Password is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+                    Password must be at least 6 characters long
+                </mat-error>
+            </mat-form-field>
+
+            <div class="center-radio-group">
+                <mat-radio-group aria-label="Selecciona tú perfil">
+                    <mat-radio-button value="1">Mesero</mat-radio-button>
+                    <mat-radio-button value="2">Administrador</mat-radio-button>
+                </mat-radio-group>
+            </div>
+
+        </form>
+        <!-- Acciones del Card -->
+        <mat-card-actions>
+            <button mat-flat-button class="custom-button">Sign In</button>
+        </mat-card-actions>
+
+        <div style="text-align: center; margin-top: 16px;">
+            <a routerLink="/signup">¿No tienes una cuenta? Regístrate aquí</a>
+        </div>
+
+        </mat-card>
+    </div>
+</body>
+  

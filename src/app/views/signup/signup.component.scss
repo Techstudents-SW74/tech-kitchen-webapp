@@ -1,5 +1,6 @@
+/* styles.css */
 body {
-    background-color: #ECEBF3; /* Color de fondo */
+    background-color: #D3D2E5; /* Color de fondo */
     margin: 0; /* Elimina márgenes del body */
     height: 100vh; /* Asegura que el body ocupe toda la altura */
 }
@@ -11,16 +12,8 @@ body {
     height: 100vh; /* Asegura que el contenedor ocupe toda la altura */
 }
 
-
-.center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .custom-card {
-    width: 400px; /* Ajusta el ancho del mat-card */
+    width: 600px; /* Ajusta el ancho del mat-card */
     background-color: #ABABCE; /* Color morado */
     color: white; /* Color del texto blanco para mayor legibilidad */
     padding: 20px;
@@ -34,40 +27,31 @@ body {
     text-align: center; /* Alinea el texto en el centro */
     padding: 20px;
 }
+.row {
+    display: flex;
+    justify-content: space-between; /* Asegura que haya espacio entre los campos */
+}
 
-.example-full-width {
+.email-full-width {
     width: 100%;
 }
 
-.example-form .mat-form-field-wrapper {
-    border-radius: 25px; /* Redondea los bordes */
-    overflow: hidden; /* Asegura que el contenido esté dentro de los bordes */
+.example-full-width {
+    flex: 1; /* Hace que cada campo ocupe el mismo ancho */
+    margin-right: 16px; /* Espacio entre los campos */
 }
 
-.example-form .mat-form-field-appearance-outline .mat-form-field-outline {
-    border-radius: 25px; /* Redondea el borde del cuadro */
+.example-full-width:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último campo */
 }
 
-.example-form .mat-form-field-appearance-outline .mat-form-field-outline-start,
-.example-form .mat-form-field-appearance-outline .mat-form-field-outline-end {
-    border-radius: 25px; /* Aplica el borde redondeado a los bordes del campo */
-}
-  
 .mat-mdc-card-actions{
     flex-direction: column;
 }
-
 .custom-button {
     background-color: #5E5E99 !important; /* Color morado */
     color: white !important; /* Color del texto */
 }
-  
 .custom-button:hover {
     background-color: #31304A !important; /* Color al pasar el mouse por encima */
-}
-
-.center-radio-group {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    margin: 16px 0; /* Espacio arriba y abajo */
 }
