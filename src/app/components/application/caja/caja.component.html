@@ -1,3 +1,62 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Caja Registradora</mat-card-title>
+      <mat-card-subtitle>Gestión de Caja Actual</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Resumen de Caja -->
+      <div class="caja-resumen">
+        <h3>Resumen del Día</h3>
+        <mat-grid-list cols="2" rowHeight="150px">
+          <mat-grid-tile>
+            <mat-card>
+              <mat-card-content>
+                <h4>Total Ventas</h4>
+                <p>$10,500</p>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-card>
+              <mat-card-content>
+                <h4>Efectivo en Caja</h4>
+                <p>$5,000</p>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+      <!-- Formulario de Movimientos -->
+      <div class="movimientos-form">
+        <h3>Registrar Movimiento</h3>
+        <form>
+          <mat-form-field appearance="fill">
+            <mat-label>Tipo de Movimiento</mat-label>
+            <mat-select>
+              <mat-option value="entrada">Entrada</mat-option>
+              <mat-option value="salida">Salida</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Cantidad</mat-label>
+            <input matInput type="number" placeholder="Ingresa la cantidad">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Descripción</mat-label>
+            <textarea matInput placeholder="Descripción del movimiento"></textarea>
+          </mat-form-field>
+          <button mat-raised-button color="primary">Registrar</button>
+        </form>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="accent">Ver Historial de Caja</button>
+      <button mat-button color="warn">Cerrar Caja</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
 
 
 
