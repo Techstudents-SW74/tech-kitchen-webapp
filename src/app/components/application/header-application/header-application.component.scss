@@ -17,19 +17,19 @@
     width: 103px;
   }
   
-  .spacer {
+.spacer {
     flex: 1;
-  }
+}
   
-  .navbar-actions {
+.navbar-actions {
     display: flex;
     align-items: center;
-  }
+}
   
-  .navbar-toggler {
+.navbar-toggler {
     display: none;
-  }
-  .navbar-actions .btn-primary {
+}
+.navbar-actions .btn-primary {
     background-color: #007bff; /* Color primario */
     color: white; /* Color de texto */
     border: none; /* Sin borde */
