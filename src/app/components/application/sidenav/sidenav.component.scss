@@ -1,0 +1,54 @@
+.sidenav-container {
+    height: 100%;
+}
+
+.mat-sidenav {
+    width: 250px;
+    background-color: #31304A; /* Color del sidenav */
+    color: white; /* Color del texto */
+}
+
+.mat-sidenav button {
+    color: white; /* Color de los botones */
+    width: 100%; /* Que los botones ocupen todo el ancho del sidenav */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.content {
+    padding: 16px;
+}
+
+.sidenav-button {
+    width: 100%; /* Asegúrate de que los botones ocupen todo el ancho */
+    text-align: left; /* Alinear el texto a la izquierda */
+    transition: transform 0.2s ease; /* Suaviza la transición */
+    font-size: 1.2rem; /* Aumenta el tamaño de la letra */
+    padding: 20px; /* Aumenta el espacio interno de los botones */
+}
+
+
+
+.sidenav-button:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el mouse */
+    background-color: #ABABCE; /* Color de fondo opcional al hacer hover */
+}
+.sidenav-header {
+    background-color: #373557; /* Color de fondo del encabezado */
+    padding-top: 40px;
+    padding-bottom: 40px; /* Espacio alrededor del título */
+    text-align: center; /* Centrar el texto */
+}
+
+.restaurant-title {
+    color: white; /* Color del texto */
+    font-size: 1.5rem; /* Tamaño del texto */
+    margin: 0; /* Eliminar margen por defecto */
+    font-family: 'Arial', sans-serif; /* Fuente opcional */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto para dar efecto 3D */
+}
+
+.sidenav-logo {
+    width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio entre el logo y el título */
+}

@@ -1,0 +1,66 @@
+.header-container {
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    background: radial-gradient(circle, #5E5E99 0%, #A9A9D9 70%);
+    /* Color personalizado */
+    color: white; /* Opcional: color de texto */
+  }
+  
+  .navbar-brand img {
+    height: 96px;
+    width: 103px;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-toggler {
+    display: none;
+  }
+  .navbar-actions .btn-primary {
+    background-color: #007bff; /* Color primario */
+    color: white; /* Color de texto */
+    border: none; /* Sin borde */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.navbar-actions .btn-danger {
+    background-color: #dc3545; /* Color de peligro */
+    color: white; /* Color de texto */
+    border: none; /* Sin borde */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Añadir estilo para hover */
+.navbar-actions .btn-primary:hover {
+    background-color: #0056b3; /* Color primario más oscuro */
+}
+
+.navbar-actions .btn-danger:hover {
+    background-color: #c82333; /* Color de peligro más oscuro */
+}
+ 
+  @media (max-width: 768px) {
+  
+    .navbar-toggler {
+      display: block;
+    }
+  
+    .navbar-actions {
+      display: none;
+    }
+
+  }
+  

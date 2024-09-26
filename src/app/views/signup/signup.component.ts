@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,7 +10,7 @@ import { FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupComponent {
   signUpForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.signUpForm = this.fb.group({
       name: ['', Validators.required],
       lastname: ['', Validators.required],
@@ -59,6 +60,7 @@ export class SignupComponent {
     if (this.signUpForm.valid) {
       console.log('Form Submitted!', this.signUpForm.value);
       // Aquí puedes agregar la lógica para manejar el registro
+      this.router.navigate(['/home-project']);
     }
   }
 }

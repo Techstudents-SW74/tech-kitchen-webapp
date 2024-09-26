@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-application.component.scss']
 })
 export class HeaderApplicationComponent {
+  isMenuCollapsed: boolean = true;
 
+  toggleMenu() {
+    this.isMenuCollapsed = !this.isMenuCollapsed;
+  }
+
+  logout() {
+    // Lógica para cerrar sesión
+  }
 }
