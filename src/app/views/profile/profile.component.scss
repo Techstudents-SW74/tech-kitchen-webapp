@@ -1,0 +1,42 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh; /* Asegura que el contenedor llene toda la pantalla */
+}
+
+
+/* Contenedor principal */
+.profile-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 50px;
+  min-height: 100vh; /* Asegura que el contenedor llene toda la pantalla */
+}
+
+/* El formulario debe ocupar el resto del espacio */
+.profile-form {
+  flex-grow: 1; /* Expande el formulario para ocupar el espacio sobrante */
+  margin-left: 20px;
+}
+
+/* Mantener la estructura actual de los grupos de formularios */
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Estilo de los campos de formulario */
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
