@@ -1,0 +1,23 @@
+.container {
+  margin: 20px;
+}
+
+.caja-resumen {
+  margin-bottom: 30px;
+}
+
+.mat-card {
+  margin: 15px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+

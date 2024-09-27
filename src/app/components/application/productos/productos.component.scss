@@ -1,0 +1,41 @@
+.producto-card {
+  margin: 12px; /* Increased margin for better spacing */
+  border: 1px solid #ddd; /* Light border around the card */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Prevents overflow of content */
+  transition: transform 0.2s; /* Smooth scaling on hover */
+}
+
+.producto-card:hover {
+  transform: scale(0.70); /* Slightly enlarges the card on hover */
+}
+
+.producto-imagen {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Maximum height of the image */
+  object-fit: cover; /* Ensures images cover the space without distortion */
+  border-bottom: 1px solid #ddd; /* Divider between image and content */
+}
+
+/* Additional styling for content inside the card */
+.producto-card-content {
+  padding: 16px; /* Padding for content */
+}
+
+.producto-titulo {
+  font-size: 1.2em; /* Larger font size for titles */
+  margin: 0; /* Remove default margin */
+}
+
+.producto-descripcion {
+  color: #666; /* Subtle color for descriptions */
+  font-size: 0.9em; /* Smaller font size for descriptions */
+  margin-top: 8px; /* Space above the description */
+}
+
+.producto-precio {
+  font-weight: bold; /* Bold font for prices */
+  margin-top: 8px; /* Space above the price */
+}

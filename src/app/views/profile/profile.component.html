@@ -1,1 +1,57 @@
-<p>profile works!</p>
+<app-header-application></app-header-application>
+
+<div class="layout-container">
+  <!-- Sidebar -->
+
+
+  <div class="profile-container">
+
+    <div class="profile-form">
+      <mat-card>
+
+        <mat-card-content>
+          <form>
+            <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Commercial Name</mat-label>
+                <input matInput placeholder="Enter your commercial name" required>
+                <mat-hint>Enter the name of your business or company.</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>E-mail</mat-label>
+                <input matInput type="email" placeholder="example@domain.com" required>
+                <mat-hint>Provide a valid email address for contact.</mat-hint>
+              </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Information</mat-label>
+              <textarea matInput placeholder="Describe your business or personal information"></textarea>
+              <mat-hint>Provide additional details about you or your company.</mat-hint>
+            </mat-form-field>
+
+            <div class="form-group">
+              <mat-form-field appearance="fill">
+                <mat-label>Country</mat-label>
+                <input matInput placeholder="Enter your country" required>
+                <mat-hint>The country where your business operates.</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label>Phone number</mat-label>
+                <input matInput type="tel" placeholder="(123) 456-7890" required>
+                <mat-hint>Provide a contact number for clients or customers.</mat-hint>
+              </mat-form-field>
+            </div>
+          </form>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button mat-raised-button color="primary">Save</button>
+          <button mat-raised-button color="accent" routerLink="/home-project">Go back</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,106 @@
+<body>
+    <div class="center-container">
+        <mat-card class="custom-card" appearance="outlined">
+            <mat-card-header class="mat-card-header">
+                <mat-card-title style="font-size: 30px;">Sign Up</mat-card-title>
+                <mat-card-subtitle>Regístrate en Kitchentech</mat-card-subtitle>
+            </mat-card-header>
+
+            <!-- Formulario para el registro -->
+            <form class="example-form">
+                <!-- Input para el nombre -->
+                <div class="row">
+                    <!-- Input para el nombre -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 14px; color: #F6F5FA;">Nombre</mat-label>
+                        <input type="text" matInput [formControl]="nameFormControl" placeholder="Ex. Juan">
+                        <mat-error *ngIf="nameFormControl.hasError('required')">
+                            Nombre es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- Input para los apellidos -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 14px; color: #F6F5FA;">Apellidos</mat-label>
+                        <input type="text" matInput [formControl]="lastnameFormControl" placeholder="Ex. Pérez">
+                        <mat-error *ngIf="lastnameFormControl.hasError('required')">
+                            Apellido es <strong>requerido</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+
+                <!-- Input para el email -->
+                <mat-form-field class="email-full-width" appearance="outline">
+                    <mat-label style="font-size: 14px; color: #F6F5FA;">Email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. fcastro@gmail.com">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Por favor, introduce un email válido
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email es <strong>requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <div class = "row">
+                    <!-- Input para la contraseña -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 14px; color: #F6F5FA;">Contraseña</mat-label>
+                        <input type="password" matInput [formControl]="passwordFormControl" placeholder="Crea tu contraseña">
+                        <mat-error *ngIf="passwordFormControl.hasError('required')">
+                            Contraseña es <strong>requerida</strong>
+                        </mat-error>
+                        <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+                            La contraseña debe tener al menos 6 caracteres
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- Input para confirmar la contraseña -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 14px; color: #F6F5FA;">Confirmar Contraseña</mat-label>
+                        <input type="password" matInput [formControl]="confirmPasswordFormControl" placeholder="Confirma tu contraseña">
+                        <mat-error *ngIf="confirmPasswordFormControl.hasError('required')">
+                            Confirmar contraseña es <strong>requerido</strong>
+                        </mat-error>
+                        <mat-error *ngIf="!passwordsMatch()">
+                            Las contraseñas no coinciden
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class = "row">
+                    <!-- Input para el teléfono -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 14px; color: #F6F5FA;">Teléfono</mat-label>
+                        <input type="tel" matInput [formControl]="phoneFormControl" placeholder="Ex. 987654321">
+                        <mat-error *ngIf="phoneFormControl.hasError('required')">
+                            Teléfono es <strong>requerido</strong>
+                        </mat-error>
+                        <mat-error *ngIf="phoneFormControl.hasError('pattern')">
+                            Introduce un número de teléfono válido
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- Input para el área -->
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label style="font-size: 14px; color: #F6F5FA;">Área</mat-label>
+                        <input type="text" matInput [formControl]="areaFormControl" placeholder="Ex. Cocina, Administración">
+                        <mat-error *ngIf="areaFormControl.hasError('required')">
+                            Área es <strong>requerida</strong>
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+            </form>
+
+            <!-- Acciones del Card -->
+            <mat-card-actions>
+                <button mat-flat-button class="custom-button" (click)="onSubmit()">Sign Up</button>
+            </mat-card-actions>
+
+            <div style="text-align: center; margin-top: 16px;">
+                <a routerLink="/login">¿Ya tienes una cuenta? Ingresa aquí</a>
+            </div>
+        </mat-card>
+    </div>
+</body>

@@ -1,0 +1,73 @@
+body {
+    background-color: #ECEBF3; /* Color de fondo */
+    margin: 0; /* Elimina márgenes del body */
+    height: 100vh; /* Asegura que el body ocupe toda la altura */
+}
+
+.center-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Asegura que el contenedor ocupe toda la altura */
+}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.custom-card {
+    width: 400px; /* Ajusta el ancho del mat-card */
+    background-color: #ABABCE; /* Color morado */
+    color: white; /* Color del texto blanco para mayor legibilidad */
+    padding: 20px;
+}
+
+.mat-card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Alinea el contenido al centro horizontalmente */
+    text-align: center; /* Alinea el texto en el centro */
+    padding: 20px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-form .mat-form-field-wrapper {
+    border-radius: 25px; /* Redondea los bordes */
+    overflow: hidden; /* Asegura que el contenido esté dentro de los bordes */
+}
+
+.example-form .mat-form-field-appearance-outline .mat-form-field-outline {
+    border-radius: 25px; /* Redondea el borde del cuadro */
+}
+
+.example-form .mat-form-field-appearance-outline .mat-form-field-outline-start,
+.example-form .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-radius: 25px; /* Aplica el borde redondeado a los bordes del campo */
+}
+  
+.mat-mdc-card-actions{
+    flex-direction: column;
+}
+
+.custom-button {
+    background-color: #5E5E99 !important; /* Color morado */
+    color: white !important; /* Color del texto */
+}
+  
+.custom-button:hover {
+    background-color: #31304A !important; /* Color al pasar el mouse por encima */
+}
+
+.center-radio-group {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    margin: 16px 0; /* Espacio arriba y abajo */
+}
