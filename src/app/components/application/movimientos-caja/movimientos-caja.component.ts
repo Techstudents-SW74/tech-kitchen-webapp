@@ -6,8 +6,13 @@ import { SalesService } from './service/sales.service'; // Ajusta la ruta según
   templateUrl: './movimientos-caja.component.html',
   styleUrls: ['./movimientos-caja.component.scss']
 })
+
+
 export class MovimientosCajaComponent implements OnInit {
+
+  saleDate: Date = new Date();  // Fecha actual  //
   sales: any[] = [];
+
 
   constructor(private salesService: SalesService) {}
 
