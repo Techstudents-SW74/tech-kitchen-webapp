@@ -1,6 +1,6 @@
 <div class="cuenta-container">
     <h2>Cuentas Guardadas</h2>
-    
+
     <div class="content">
         <!-- Botones CRUD a la izquierda -->
         <div class="left-buttons">
@@ -44,21 +44,24 @@
         </div>
     </div>
 
-    <!-- Listado de mesas en cards -->
+    <!-- Listado de mesas o cuentas en cards -->
     <div class="item-list">
-        <mat-card *ngFor="let item of filteredItems" class="product-card" [ngStyle]="{'background-color': getCardColor(item.status)}">
-            <mat-card-header>
-                <mat-card-title>Mesa {{ item.number }}</mat-card-title>
-                <mat-card-subtitle>Comensales: {{ item.guests }}</mat-card-subtitle>
-                <mat-card-subtitle>Estado: {{ getStatusText(item.status) }}</mat-card-subtitle> <!-- Estado de la mesa -->
-            </mat-card-header>
-            <mat-card-content>
-                <p *ngIf="item.orderTotal > 0">Total de la orden: S/ {{ item.orderTotal.toFixed(2) }}</p> <!-- Precio total si hay orden -->
-                <p *ngIf="item.orderTotal === 0">Sin órdenes</p> <!-- Sin orden si el total es 0 -->
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button color="primary">Añadir a la Orden</button>
-            </mat-card-actions>
+        <mat-card *ngFor="let account of filteredItems" class="product-card" [ngStyle]="{'background-color': getCardColor(account.table.tableStatus)}">
+          <mat-card-header>
+            <mat-card-title *ngIf="showMesas">Mesa {{ account.table.tableNumber }}</mat-card-title>
+            <mat-card-title *ngIf="!showMesas">{{ account.accountName }}</mat-card-title>
+            <mat-card-subtitle *ngIf="showMesas">Comensales: {{ account.totalGuests }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="!showMesas">Dueño: {{ account.accountOwner }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="showMesas">Estado: {{ getStatusText(account.table.tableStatus) }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="!showMesas">Estado de Cuenta: {{ account.accountStatus }}</mat-card-subtitle> <!-- Estado de la cuenta -->
+          </mat-card-header>
+          <mat-card-content>
+            <p *ngIf="account.totalOrder > 0">Total de la orden: S/ {{ account.totalOrder.toFixed(2) }}</p> <!-- Precio total si hay orden -->
+            <p *ngIf="account.totalOrder === 0">Sin órdenes</p> <!-- Sin orden si el total es 0 -->
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" *ngIf="showMesas">Añadir a la Orden</button>
+          </mat-card-actions>
         </mat-card>
-    </div>
+      </div>
 </div>

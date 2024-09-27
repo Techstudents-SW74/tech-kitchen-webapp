@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CustomerAccountService } from 'src/app/services/cuentas-guardadas/customer-account.service';
+import { CustomerAccount } from 'src/app/models/customerAccount/customerAccount.module';
 
 @Component({
   selector: 'app-cuentas-guardadas',
@@ -7,33 +9,36 @@ import { Component } from '@angular/core';
 })
 export class CuentasGuardadasComponent {
   searchTerm: string = '';
-  items: any[] = [
-    { number: 1, guests: 4, status: 'available',orderTotal: 0.00},
-    { number: 2, guests: 2, status: 'occupied',orderTotal: 35.50},
-    { number: 3, guests: 6, status: 'reserved',orderTotal:40.00},
-    { number: 4, guests: 8, status: 'available',orderTotal: 0.00},
-    { number: 5, guests: 10, status: 'available',orderTotal: 0.00},
-    { number: 6, guests: 4, status: 'occupied',orderTotal: 125.90},
-    { number: 7, guests: 2, status: 'reserved',orderTotal:40.00},
-    { number: 8, guests: 3, status: 'occupied',orderTotal: 87.10},
-    // Añade más elementos según sea necesario
-  ];
-  
-  filteredItems: any[] = [...this.items]; // Copia inicial de los elementos filtrados
+  accounts: CustomerAccount[] = [];
+  filteredItems: CustomerAccount[] = [];
+  showMesas: boolean = true;
+
+  constructor(private customerAccountService: CustomerAccountService) {}
+
+  ngOnInit(): void {
+    this.getAllCustomerAccounts();
+  }
+
+  getAllCustomerAccounts(): void {
+    this.customerAccountService.getCustomerAccountList().subscribe((accounts) => {
+      this.accounts = accounts;
+      this.filteredItems = [...this.accounts]; // Actualiza los items filtrados
+    });
+  }
 
   filterItems() {
-    this.filteredItems = this.items.filter(item => 
-      item.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    this.filteredItems = this.accounts.filter(item =>
+      item.accountName.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
 
   clearSearch() {
     this.searchTerm = '';
-    this.filteredItems = [...this.items]; // Restablecer la lista al estado inicial
+    this.filteredItems = [...this.accounts]; // Restablecer la lista al estado inicial
   }
 
   getCardColor(status: string): string {
-    switch(status) {
+    switch (status) {
       case 'available':
         return 'lightgreen'; // Color para mesas disponibles
       case 'occupied':
@@ -45,9 +50,8 @@ export class CuentasGuardadasComponent {
     }
   }
 
-  // Método para obtener el texto del estado de la mesa
   getStatusText(status: string): string {
-    switch(status) {
+    switch (status) {
       case 'available':
         return 'Disponible';
       case 'occupied':
@@ -59,14 +63,14 @@ export class CuentasGuardadasComponent {
     }
   }
 
+  // Cambiar la vista a mostrar mesas
   viewMesas() {
-    console.log("Ver Mesas clicked");
-    // Lógica para ver las mesas o cambiar la vista si es necesario
+    this.showMesas = true;
   }
-  
+
+  // Cambiar la vista a mostrar cuentas
   viewCuentas() {
-    console.log("Ver Cuentas clicked");
-    // Lógica para ver las cuentas guardadas o cambiar la vista
+    this.showMesas = false;
   }
   
 }

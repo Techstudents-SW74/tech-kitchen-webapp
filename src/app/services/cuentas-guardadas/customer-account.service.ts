@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { CustomerAccount } from 'src/app/models/customerAccount/customerAccount.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerAccountService {
 
-  base_url = 'https://my-json-server.typicode.com/Techstudents-SW74/Kitchen-fakeAPI/customerAccount';
+  base_url = 'https://my-json-server.typicode.com/Techstudents-SW74/Kitchen-fakeAPI/customerAccounts';
   constructor(private http: HttpClient) { }
 
   httpOptions = {
@@ -27,12 +26,12 @@ export class CustomerAccountService {
   }
 
   getCustomerAccountList():Observable<any>{
-    return this.http.get(`${this.base_url}`)
+    return this.http.get(`${this.base_url}`,this.httpOptions)
     .pipe(retry(3), catchError(this.handleError));
   }
 
   getCustomerAccountById(id: number): Observable<any>{
-    return this.http.get(`${this.base_url}/${id}`)
+    return this.http.get(`${this.base_url}/${id}`,this.httpOptions)
     .pipe(retry(3),catchError(this.handleError));
   }
 }
