@@ -53,7 +53,7 @@ import { InventarioComponent } from './components/application/inventario/inventa
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

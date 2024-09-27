@@ -15,13 +15,13 @@
       <!-- Right side buttons (hidden on small screens) -->
       <div class="navbar-actions">
         <a mat-button class="btn btn-primary" href="/profile">Perfil</a>
-        <button mat-button class="btn btn-danger" (click)="logout()">Cerrar Sesión</button>
+        <button mat-button class="btn btn-danger" (click)="logout()" routerLink="/login">Cerrar Sesión</button>
       </div>
 
       <!-- Menu for small screens -->
       <mat-menu #menu="matMenu">
         <button mat-menu-item routerLink="/profile">Perfil</button>
-        <button mat-menu-item (click)="logout()">Cerrar Sesión</button>
+        <button mat-menu-item (click)="logout()" routerLink="/login">Cerrar Sesión</button>
       </mat-menu>
     </mat-toolbar>
 </header>
