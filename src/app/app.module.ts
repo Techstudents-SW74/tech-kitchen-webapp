@@ -27,6 +27,7 @@ import { InventarioComponent } from './components/application/inventario/inventa
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HomeComponent,
     HomeAppComponent,

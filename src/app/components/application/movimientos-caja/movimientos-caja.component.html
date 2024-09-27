@@ -1,1 +1,25 @@
-<p>movimientos-caja works!</p>
+<div *ngIf="sales.length > 0; else noSales">
+  <h2>Movimientos de Caja</h2>
+  <p>Fecha de venta: {{ saleDate | date: 'fullDate' }}</p>
+
+
+  <ul class="sales-list">
+    <li *ngFor="let sale of sales" class="sale-item">
+      <div class="sale-details">
+        <h1><strong>{{ sale.productName }}</strong></h1>
+        <p>{{ sale.description }}</p>
+        <span>Precio: ${{ sale.unitPrice | number: '1.2-2' }}</span>
+        <span> - Cantidad: {{ sale.quantity }}</span>
+        <span> - Fecha : {{ sale.date }}</span>
+      </div>
+      <div class="sale-actions">
+
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noSales>
+  <p>No hay ventas disponibles.</p>
+</ng-template>
+
