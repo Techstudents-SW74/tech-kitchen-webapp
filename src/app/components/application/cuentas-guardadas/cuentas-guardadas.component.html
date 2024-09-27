@@ -1,1 +1,67 @@
+<div class="cuenta-container">
+    <h2>Cuentas Guardadas</h2>
 
+    <div class="content">
+        <!-- Botones CRUD a la izquierda -->
+        <div class="left-buttons">
+            <button mat-raised-button color="primary" class="large-button">
+                <mat-icon>add</mat-icon> <!-- Icono para agregar -->
+                Agregar Mesa
+            </button>
+            <button mat-raised-button color="accent" class="large-button">
+                <mat-icon>edit</mat-icon> <!-- Icono para modificar -->
+                Modificar Mesa
+            </button>
+            <button mat-raised-button color="warn" class="large-button">
+                <mat-icon>delete</mat-icon> <!-- Icono para eliminar -->
+                Eliminar Mesa
+            </button>
+        </div>
+
+        <!-- Contenedor para búsqueda y botones de acciones -->
+        <div class="search-and-actions">
+            <!-- Apartado de búsqueda -->
+            <mat-form-field appearance="outline" class="search-field">
+                <mat-label>Buscar Mesa</mat-label>
+                <mat-icon matPrefix>search</mat-icon> <!-- Icono de búsqueda -->
+                <input matInput [(ngModel)]="searchTerm" (ngModelChange)="filterItems()" placeholder="Buscar mesa...">
+                <button mat-icon-button *ngIf="searchTerm" matSuffix (click)="clearSearch()">
+                    <mat-icon>clear</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <!-- Botones para ver mesas y cuentas -->
+            <div class="action-buttons">
+                <button mat-raised-button class="btn btn-primary" (click)="viewMesas()">
+                    <mat-icon>table_restaurant</mat-icon> <!-- Icono para ver mesas -->
+                    Ver Mesas
+                </button>
+                <button mat-raised-button (click)="viewCuentas()">
+                    <mat-icon>account_balance_wallet</mat-icon> <!-- Icono para ver cuentas -->
+                    Ver Cuentas
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Listado de mesas o cuentas en cards -->
+    <div class="item-list">
+        <mat-card *ngFor="let account of filteredItems" class="product-card" [ngStyle]="{'background-color': getCardColor(account.table.tableStatus)}">
+          <mat-card-header>
+            <mat-card-title *ngIf="showMesas">Mesa {{ account.table.tableNumber }}</mat-card-title>
+            <mat-card-title *ngIf="!showMesas">{{ account.accountName }}</mat-card-title>
+            <mat-card-subtitle *ngIf="showMesas">Comensales: {{ account.totalGuests }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="!showMesas">Dueño: {{ account.accountOwner }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="showMesas">Estado: {{ getStatusText(account.table.tableStatus) }}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="!showMesas">Estado de Cuenta: {{ account.accountStatus }}</mat-card-subtitle> <!-- Estado de la cuenta -->
+          </mat-card-header>
+          <mat-card-content>
+            <p *ngIf="account.totalOrder > 0">Total de la orden: S/ {{ account.totalOrder.toFixed(2) }}</p> <!-- Precio total si hay orden -->
+            <p *ngIf="account.totalOrder === 0">Sin órdenes</p> <!-- Sin orden si el total es 0 -->
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="primary" *ngIf="showMesas">Añadir a la Orden</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+</div>
