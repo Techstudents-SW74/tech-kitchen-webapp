@@ -1,43 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from './services/product.service'; // Ajusta la ruta según tu estructura
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.scss']
 })
-export class ProductosComponent {
-  // Columnas a mostrar en la tabla
-  displayedColumnsProducts: string[] = ['id', 'name', 'category', 'stock', 'actions'];
+export class ProductosComponent implements OnInit {
+  products: any[] = [];
 
-  // Datos de ejemplo de productos
-  productData = [
-    { id: 1, name: 'Cocacola', category: 'Bebidas', stock: 50 },
-    { id: 2, name: 'Ron', category: 'Bebidas', stock: 100 },
-    { id: 3, name: 'Agua', category: 'Bebidas', stock: 20 },
-    { id: 4, name: 'Cerveza', category: 'Bebidas', stock: 60 },
-  ];
+  constructor(private productService: ProductService) { }
 
-  // Filtro de búsqueda
-  filteredProducts = [...this.productData];
+  ngOnInit(): void {
+    this.loadProducts();
+  }
 
-  // Filtrar productos por nombre, categoría o stock
-  applyFilter(filterValue: string) {
-    const searchTerm = filterValue.trim().toLowerCase();
-    this.filteredProducts = this.productData.filter(product =>
-      product.name.toLowerCase().includes(searchTerm) ||
-      product.category.toLowerCase().includes(searchTerm) ||
-      product.stock.toString().includes(searchTerm)
+  loadProducts(): void {
+    this.productService.getProducts().subscribe(
+      (data) => {
+        this.products = data;
+        console.log(this.products); // Para verificar que los datos se han cargado
+      },
+      (error) => {
+        console.error('Error loading products:', error);
+      }
     );
-  }
-
-  // Métodos de edición y eliminación (puedes añadir lógica aquí)
-  editProduct(product: any) {
-    console.log('Editando producto', product);
-    // Lógica para editar producto
-  }
-
-  deleteProduct(product: any) {
-    console.log('Eliminando producto', product);
-    // Lógica para eliminar producto
   }
 }

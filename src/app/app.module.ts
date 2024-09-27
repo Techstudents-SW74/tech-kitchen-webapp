@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MaterialModule } from './shared/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { InventarioComponent } from './components/application/inventario/inventa
 
 @NgModule({
   declarations: [
+
     AppComponent,
     HomeComponent,
     HomeAppComponent,
@@ -50,7 +52,8 @@ import { InventarioComponent } from './components/application/inventario/inventa
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

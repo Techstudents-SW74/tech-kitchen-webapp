@@ -1,16 +1,32 @@
-/* Contenedor principal */
-.mat-card {
-  margin-bottom: 20px;
-}
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-table {
-  width: 100%;
-}
+  .producto-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
 
-.mat-header-cell {
-  font-weight: bold;
-}
+    .producto-imagen {
+      width: 100%;
+      height: auto;
+    }
 
-.mat-elevation-z8 {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    button {
+      margin-top: 10px;
+      background-color: #4CAF50; /* Verde */
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #45a049; /* Verde oscuro */
+      }
+    }
+  }
 }

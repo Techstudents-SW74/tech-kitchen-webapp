@@ -1,1 +1,13 @@
-<p>movimientos-caja works!</p>
+<div *ngIf="sales.length > 0; else noSales">
+  <h2>Movimientos de Caja</h2>
+  <ul>
+    <li *ngFor="let sale of sales">
+      <strong>{{ sale.name }}</strong> - Precio: {{ sale.unitPrice }} - Cantidad: {{ sale.quantity }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #noSales>
+  <p>No hay ventas disponibles.</p>
+</ng-template>
+
