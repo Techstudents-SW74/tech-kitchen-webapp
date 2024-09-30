@@ -26,7 +26,7 @@ mat-card-header {
 
 .mat-card-title {
   font-size: 2.4rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #31304A;
 }
 
@@ -37,7 +37,15 @@ mat-form-field {
 .login-button{
   width: 100%;
   margin: 0 0 16px 0;
-  color: #F6F5FA !important;
+  color: #F6F5FA;
   padding: 24px;
-  background: #31304A !important;
+  background: #31304A;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.signup-redirect {
+  text-align: right;
+  margin-right: 5px;
 }

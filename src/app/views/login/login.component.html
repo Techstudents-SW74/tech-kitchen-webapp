@@ -30,8 +30,11 @@
             Your password must have at least 6 characters
           </mat-error>
         </mat-form-field>
-        <button mat-flat-button class="login-button" (click)="onSubmit()">Sign In</button>
-        <a routerLink="/signup">Don't have an account? Sign up</a>
+
+        <button class="login-button" (click)="onSubmit()">Sign In</button>
+        <div class="signup-redirect">
+          <a routerLink="/signup">Don't have an account? Sign up</a>
+        </div>
       </form>
     </mat-card>
 </div>

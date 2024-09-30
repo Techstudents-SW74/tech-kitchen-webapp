@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   signUpForm: FormGroup;
+  accountRoleFormControl = new FormControl('', Validators.required);
 
   constructor(private fb: FormBuilder, private router: Router) {
     this.signUpForm = this.fb.group({
@@ -18,7 +19,7 @@ export class SignupComponent {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required,Validators.minLength(6)]],
       phone: ['', [Validators.required, Validators.pattern(/^\d{9}$/)]], // Ejemplo de patrón para números de teléfono
-      area: ['', Validators.required],
+      accountRole: this.accountRoleFormControl,
     });
   }
 
@@ -46,10 +47,6 @@ export class SignupComponent {
 
   get phoneFormControl() {
     return this.signUpForm.get('phone') as FormControl;
-  }
-
-  get areaFormControl() {
-    return this.signUpForm.get('area') as FormControl;
   }
 
   passwordsMatch(): boolean {
