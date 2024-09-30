@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class HeaderApplicationComponent {
   isMenuCollapsed: boolean = true;
 
+  // Alterna el estado del menu
   toggleMenu() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
   }
