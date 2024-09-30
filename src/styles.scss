@@ -6,13 +6,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
-.btn-primary {
-    background-color: #5E5E99 !important;
-    border-color: #5E5E99 !important;
-    color: white !important;
-  }
+.mat-radio-button{
+  color: #31304A;
+}
 
-  .btn-primary:hover {
-    background-color: #31304A !important;
-    border-color: #31304A !important;
-  }
+.btn-primary {
+  background-color: #5E5E99;
+  border-color: #5E5E99;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #31304A;
+  border-color: #31304A;
+}
