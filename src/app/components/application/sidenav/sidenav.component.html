@@ -1,50 +1,41 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen">
-        <div class="sidenav-header">
-            <button mat-icon-button class="toggle-button" (click)="toggleSidenav()">
-                <mat-icon *ngIf="isSidenavOpen">chevron_left</mat-icon>
-                <mat-icon *ngIf="!isSidenavOpen">chevron_right</mat-icon>
-            </button>
-            <img src="/assets/images/littlecaesars.png" alt="Logo" class="sidenav-logo" />
-            <h1 class="restaurant-title">Little Caesars</h1>
-        </div>
-        <button mat-stroked-button class="sidenav-button" (click)="showComponent('caja')">Caja</button>
-        <button mat-stroked-button class="sidenav-button" (click)="showComponent('cuentas')">Cuentas Guardadas</button>
-        <button mat-stroked-button class="sidenav-button" (click)="showComponent('historial')">Historial de Ventas</button>
-        <button mat-stroked-button class="sidenav-button" (click)="showComponent('movimientos')">Mov. de Caja</button>
-        <button mat-stroked-button class="sidenav-button" (click)="showComponent('productos')">Productos</button>
-        <button mat-stroked-button class="sidenav-button" (click)="showComponent('reporte')">Reporte de Ventas</button>
-        <button mat-stroked-button class="sidenav-button" (click)="showComponent('inventario')">Inventario</button>
-    </mat-sidenav>
+  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen">
+    <div class="sidenav-header">
+      <p>"Restaurant name"</p>
+    </div>
 
-    <mat-sidenav-content>
-        <button mat-icon-button class="toggle-button" (click)="toggleSidenav()" *ngIf="!isSidenavOpen">
-            <mat-icon>chevron_right</mat-icon> <!-- Flecha a la derecha para abrir -->
-        </button>
-        <ng-container *ngIf="currentComponent === 'caja'">
-            <app-caja></app-caja> <!-- Componente de Caja -->
-        </ng-container>
-        <ng-container *ngIf="currentComponent === 'cuentas'">
-            <app-cuentas-guardadas></app-cuentas-guardadas>
-        </ng-container>
-        <ng-container *ngIf="currentComponent === 'historial'">
-            <app-historial-ventas></app-historial-ventas> 
-        </ng-container>
-        <ng-container *ngIf="currentComponent === 'movimientos'">
-            <app-movimientos-caja></app-movimientos-caja>
-        </ng-container>
-        <ng-container *ngIf="currentComponent === 'productos'">
-            <app-productos></app-productos>
-        </ng-container>
-        <ng-container *ngIf="currentComponent === 'reporte'">
-            <app-reporte-ventas></app-reporte-ventas> 
-        </ng-container>
-        <ng-container *ngIf="currentComponent === 'inventario'">
-            <app-inventario></app-inventario> 
-        </ng-container>
-    </mat-sidenav-content>
+    <ng-container *ngFor="let button of sidenavButtons">
+      <button
+        class="sidenav-button"
+        [ngClass]="{ 'active-button': currentComponent === button.component }"
+        (click)="showComponent(button.component)"
+      >
+        {{ button.label }}
+      </button>
+    </ng-container>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-container *ngIf="currentComponent === 'caja'">
+      <app-caja></app-caja>
+    </ng-container>
+    <ng-container *ngIf="currentComponent === 'cuentas'">
+      <app-cuentas-guardadas></app-cuentas-guardadas>
+    </ng-container>
+    <ng-container *ngIf="currentComponent === 'historial'">
+      <app-historial-ventas></app-historial-ventas>
+    </ng-container>
+    <ng-container *ngIf="currentComponent === 'movimientos'">
+      <app-movimientos-caja></app-movimientos-caja>
+    </ng-container>
+    <ng-container *ngIf="currentComponent === 'productos'">
+      <app-productos></app-productos>
+    </ng-container>
+    <ng-container *ngIf="currentComponent === 'reporte'">
+      <app-reporte-ventas></app-reporte-ventas>
+    </ng-container>
+    <ng-container *ngIf="currentComponent === 'inventario'">
+      <app-inventario></app-inventario>
+    </ng-container>
+  </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-  
-  

@@ -1,54 +1,46 @@
 .sidenav-container {
-    height: 100%;
+  height: 100%;
+  user-select: none;
 }
 
 .mat-sidenav {
-    width: 250px;
-    background-color: #31304A; /* Color del sidenav */
-    color: white; /* Color del texto */
+  width: 300px;
+  padding-top: 40px;
+  background-color: #31304A;
+  color: #F6F5FA;
 }
 
-.mat-sidenav button {
-    color: white; /* Color de los botones */
-    width: 100%; /* Que los botones ocupen todo el ancho del sidenav */
-    text-align: left; /* Alinear el texto a la izquierda */
-}
-
-.content {
-    padding: 16px;
+.sidenav-header {
+  background-color: #31304A;
+  padding: 40px 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .sidenav-button {
-    width: 100%; /* Asegúrate de que los botones ocupen todo el ancho */
-    text-align: left; /* Alinear el texto a la izquierda */
-    transition: transform 0.2s ease; /* Suaviza la transición */
-    font-size: 1.2rem; /* Aumenta el tamaño de la letra */
-    padding: 20px; /* Aumenta el espacio interno de los botones */
+  width: 90%;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 100;
+  padding: 20px;
+  margin: 5px 15px;
+  color: #F6F5FA;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  transition: 0.3s;
 }
-
-
 
 .sidenav-button:hover {
-    transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el mouse */
-    background-color: #ABABCE; /* Color de fondo opcional al hacer hover */
-}
-.sidenav-header {
-    background-color: #373557; /* Color de fondo del encabezado */
-    padding-top: 40px;
-    padding-bottom: 40px; /* Espacio alrededor del título */
-    text-align: center; /* Centrar el texto */
+  background-color: #5E5E99;
 }
 
-.restaurant-title {
-    color: white; /* Color del texto */
-    font-size: 1.5rem; /* Tamaño del texto */
-    margin: 0; /* Eliminar margen por defecto */
-    font-family: 'Arial', sans-serif; /* Fuente opcional */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra del texto para dar efecto 3D */
+.active-button{
+  background-color: #5E5E99;
 }
 
-.sidenav-logo {
-    width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin-right: 10px; /* Espacio entre el logo y el título */
+.toggle-button {
+  margin-bottom: 20px;
 }
+

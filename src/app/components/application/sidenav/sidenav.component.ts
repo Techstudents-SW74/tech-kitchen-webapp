@@ -6,14 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent {
-  isSidenavOpen = true; // Variable para controlar el estado del sidenav
-  currentComponent: string = ''; // Variable para almacenar el componente actual a mostrar
+  isSidenavOpen = true;
+  currentComponent: string = '';
 
-  toggleSidenav() {
-    this.isSidenavOpen = !this.isSidenavOpen; // Alternar el estado del sidenav
-  }
+  // Lista de botones del sidenav
+  sidenavButtons = [
+    { label: 'Casing', component: 'caja' },
+    { label: 'Saved accounts', component: 'cuentas' },
+    { label: 'Sales History', component: 'historial' },
+    { label: 'Casing Movements', component: 'movimientos' },
+    { label: 'Product', component: 'productos' },
+    { label: 'Sales Report', component: 'reporte' },
+    { label: 'Inventory', component: 'inventario' }
+  ];
 
   showComponent(component: string) {
-    this.currentComponent = component; // Cambia el componente actual
+    this.currentComponent = component;
   }
 }
